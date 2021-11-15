@@ -1,0 +1,33 @@
+{
+  "name": "twine-monogatari",
+  "version": "0.2.0",
+  "description": "Allows one to use Twine to create Visual Novels for the Monogatari engine.",
+  "main": "format.js",
+  "scripts": {
+    "test": "cd test && mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haroldo-ok/twine-monogatari"
+  },
+  "author": "Haroldo O. Pinheiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haroldo-ok/twine-monogatari/issues"
+  },
+  "homepage": "https://github.com/haroldo-ok/twine-monogatari",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "jsdom": "^7.0.2",
+    "mocha": "^2.3.4",
+    "mocha-jsdom": "^1.0.0",
+    "ncp": "^2.0.0",
+    "uglify-js": "^2.6.1",
+    "watch": "^0.16.0"
+  },
+  "dependencies": {
+    "browserify": "^16.3.0",
+    "js-yaml": "^3.13.1"
+  }
+}

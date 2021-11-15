@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>{{STORY_NAME}}</title>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130174335-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-130174335-2');
+		</script>
+		
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" href="{{ENGINE_URL}}/Monogatari/engine/core/monogatari.css">
+		<link rel="stylesheet" href="{{ENGINE_URL}}/Monogatari/style/error.css">
+		<link rel="stylesheet" href="{{ENGINE_URL}}/Monogatari/style/main.css">
+
+		<!-- Third Party JavaScript Libraries -->
+		<script src="{{ENGINE_URL}}/Monogatari/js/vendor/jquery.min.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/vendor/js-yaml.min.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/vendor/lodash.min.js"></script>
+
+		<!-- Monogatari JavaScript Libraries -->
+		<script src="{{ENGINE_URL}}/Monogatari/engine/debug/debug.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/engine/core/monogatari.js"></script>
+		
+		<!-- Twison -->
+		<script src="{{ENGINE_URL}}/twison.js"></script>
+		
+		<!-- Twine-Monogatari -->
+		<script src="{{ENGINE_URL}}/twine-monogatari.js"></script>
+		
+	</head>
+	<body>
+		<noscript>
+			<div class="middle text--center">
+				<h2>JavaScript Disabled or not Supported.</h2>
+				<small>To play this game, please enable JavaScript executing or use a different browser.</small>
+			</div>
+		</noscript>
+		
+		<pre id="output" style="display: none;">
+		
+		</pre>
+		
+		<div id="storyData" style="display: none;">
+			{{STORY_DATA}}
+		</div>
+		
+		<div id="monogatari">
+			<visual-novel>
+				<loading-screen></loading-screen>
+				<main-screen>
+					<main-menu></main-menu>
+				</main-screen>
+				<game-screen>
+					<dialog-log></dialog-log>
+					<text-box></text-box>
+					<quick-menu></quick-menu>
+				</game-screen>
+				<gallery-screen></gallery-screen>
+				<load-screen></load-screen>
+				<save-screen></save-screen>
+				<settings-screen></settings-screen>
+				<help-screen></help-screen>
+			</visual-novel>
+		</div>
+		
+		<div id="tw-errors">
+			<div class="icon" title="The script has errors">&#x26A0;&#xFE0F;</div>
+			<ul class="errors"></ul>
+		</div>
+		
+		<script>
+			window.twineStory = TwineMonogatari.convert();
+			console.log('Parsed story', window.twineStory);
+			if (window.twineStory.errors) {
+				console.error('Story contains errors', window.twineStory.errors);
+			}
+		</script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/options-twine.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/storage-twine.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/script-twine.js"></script>
+		<script src="{{ENGINE_URL}}/Monogatari/js/main.js"></script>
+	</body>
+</html>
